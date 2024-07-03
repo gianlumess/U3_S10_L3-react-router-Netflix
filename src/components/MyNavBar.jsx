@@ -1,7 +1,7 @@
 import "../assets/dist/css/Home.min.css";
 import { Container, Dropdown, Image, Nav, Navbar } from "react-bootstrap";
 import { BellFill, GearFill, PersonFill, Search } from "react-bootstrap-icons";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const MyNavBar = () => (
   <Navbar expand="lg" className="bg-primary">
