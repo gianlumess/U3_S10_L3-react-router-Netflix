@@ -1,7 +1,7 @@
 import "../assets/dist/css/Home.min.css";
 import { Container, Dropdown, Image, Nav, Navbar } from "react-bootstrap";
 import { BellFill, GearFill, PersonFill, Search } from "react-bootstrap-icons";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const MyNavBar = () => (
   <Navbar expand="lg" className="bg-primary">
@@ -12,14 +12,22 @@ const MyNavBar = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto ">
-          <Nav.Link>
-            <Link to="/">Home </Link>
-          </Nav.Link>
+          <NavLink to="/" className="nav-link">
+            Home
+          </NavLink>
 
-          <Nav.Link>Tv Shows</Nav.Link>
-          <Nav.Link>Movies</Nav.Link>
-          <Nav.Link>Recently Added</Nav.Link>
-          <Nav.Link>My List</Nav.Link>
+          <NavLink to="/" className="nav-link">
+            Tv Shows
+          </NavLink>
+          <NavLink to="/" className="nav-link">
+            Movies
+          </NavLink>
+          <NavLink to="/" className="nav-link">
+            Recently Added
+          </NavLink>
+          <NavLink to="/" className="nav-link">
+            My List
+          </NavLink>
         </Nav>
         <button className="btn" type="submit">
           <Search color="currentColor" />
@@ -36,12 +44,16 @@ const MyNavBar = () => (
           <Dropdown.Menu>
             <Dropdown.Item className="d-flex align-items-center">
               <PersonFill className="me-2" color="currentColor" />
-              <Link to="/profile">Profile</Link>
+              <NavLink to="/profile" className="nav-link">
+                Profile
+              </NavLink>
             </Dropdown.Item>
 
             <Dropdown.Item className="d-flex align-items-center">
               <GearFill className="me-2" color="currentColor" />
-              <Link to="/settings">Settings </Link>
+              <NavLink to="/settings" className="nav-link">
+                Settings{" "}
+              </NavLink>
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>

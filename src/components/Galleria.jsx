@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Col, Image, Row, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class Galleria extends Component {
   state = {
@@ -39,7 +40,9 @@ class Galleria extends Component {
         <Row className="gx-2 gy-2">
           {this.state.arrayFilms.map((film) => (
             <Col xs={12} sm={6} md={4} lg={3} xxl={2} key={film.imdbID}>
-              <Image className="img-fluid w-100 poster-film" src={film.Poster} />
+              <Link to={"/movie-detail/" + film.imdbID}>
+                <Image className="img-fluid w-100 poster-film" src={film.Poster} />
+              </Link>
             </Col>
           ))}
         </Row>
