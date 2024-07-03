@@ -5,6 +5,7 @@ import MyNavBar from "./MyNavBar";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
+  const [comments, setComments] = useState(null);
   const [loading, setLoading] = useState(true);
   const params = useParams();
 
@@ -25,6 +26,26 @@ const MovieDetails = () => {
         console.log(movie);
       })
       .catch((err) => console.log(err));
+  };
+
+  const fetchComments = () => {
+    fetch("https://striveschool-api.herokuapp.com/api/comments/" + params.movieId, {
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njg0ZjY3Yjc1YjczOTAwMTU3ZWFkM2MiLCJpYXQiOjE3MTk5ODk4ODMsImV4cCI6MTcyMTE5OTQ4M30.PoIMMTm_BFqVjWDvU9PWpAD8x6O_LZD5Nd6sg4-6flc",
+      },
+    })
+      .then((resp) => {
+        if (resp.ok) {
+          console.log(resp);
+          return resp.json();
+        } else {
+          throw new Error("Errore nel reperimento del dettaglio del film");
+        }
+      })
+      .then((review) => {
+        setComments(review);
+      });
   };
 
   useEffect(() => {

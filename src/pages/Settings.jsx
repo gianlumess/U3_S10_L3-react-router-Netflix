@@ -5,8 +5,8 @@ import SettingsSection from "../components/SettingsSection";
 
 const Settings = () => (
   <div data-bs-theme="dark">
+    <MyNavBar />
     <Container>
-      <MyNavBar />
       <h1>Account</h1>
       <hr />
       <SettingsSection />
