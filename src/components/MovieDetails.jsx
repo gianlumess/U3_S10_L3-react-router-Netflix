@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { Col, Container, Image, ListGroup, Row } from "react-bootstrap";
+import { Col, Container, Image, ListGroup, Row, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import MyNavBar from "./MyNavBar";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
   const params = useParams();
 
   const fetchMovieDetail = () => {
@@ -19,6 +21,7 @@ const MovieDetails = () => {
       .then((detail) => {
         console.log(detail);
         setMovie(detail);
+        setLoading(false);
         console.log(movie);
       })
       .catch((err) => console.log(err));
@@ -28,14 +31,29 @@ const MovieDetails = () => {
     fetchMovieDetail();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.movieId]);
+
+  if (loading) {
+    return (
+      <div data-bs-theme="dark" className="d-flex align-items-center bg-primary text-white vh-100">
+        <Container className="text-center">
+          <Spinner animation="border" />
+          <p>Caricamento...</p>
+        </Container>
+      </div>
+    );
+  }
+
   return (
-    <div data-bs-theme="dark" className="d-flex align-items-center bg-primary text-white vh-100">
+    <div data-bs-theme="dark" className=" bg-primary text-white vh-100">
+      <MyNavBar />
       <Container>
-        <Row>
-          <Col xs={12}>
+        <Row className="mb-3">
+          <Col className="d-flex justify-content-center align-items-center" xs={12}>
             <Image src={movie.Poster} />
           </Col>
-          <Col xs={12}>
+        </Row>
+        <Row>
+          <Col className="d-flex justify-content-center align-items-center" xs={12}>
             <ListGroup>
               <ListGroup.Item>{movie.Title}</ListGroup.Item>
               <ListGroup.Item>{movie.Genre}</ListGroup.Item>
