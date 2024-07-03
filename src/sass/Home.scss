@@ -1,0 +1,34 @@
+@import "./partials/bootstrap-overrides";
+body {
+  .navbar img {
+    height: 50px;
+  }
+}
+
+.container-fluid {
+  max-width: 60%;
+}
+
+.navbar {
+  .container {
+    padding-inline: 0;
+  }
+}
+
+.dropdown {
+  padding-inline: 0;
+}
+
+.poster-film {
+  height: 300px;
+}
+
+section {
+  img {
+    transition: 300ms;
+  }
+  img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}

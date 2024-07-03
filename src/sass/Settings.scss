@@ -1,0 +1,18 @@
+@import "./partials/settings-bootstrap-overrides";
+body {
+  .navbar {
+    .img-fluid {
+      height: 50px;
+    }
+  }
+}
+
+.container {
+  .row {
+    .col {
+      .img-fluid {
+        max-width: 40px;
+      }
+    }
+  }
+}
