@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Image, ListGroup, Row, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import MyNavBar from "./MyNavBar";
+import MyNavBar from "../components/MyNavBar";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -65,7 +65,7 @@ const MovieDetails = () => {
   }
 
   return (
-    <div data-bs-theme="dark" className=" bg-primary text-white vh-100">
+    <div data-bs-theme="dark" className=" bg-primary text-white ">
       <MyNavBar />
       <Container>
         <Row className="mb-3">

@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
-import MovieDetails from "./components/MovieDetails";
+import MovieDetails from "./pages/MovieDetails";
 import NotFound from "./components/NotFound";
 function App() {
   return (
