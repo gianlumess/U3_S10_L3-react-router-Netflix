@@ -1,13 +1,15 @@
 import "../assets/dist/css/Home.min.css";
 import { Container, Dropdown, Image, Nav, Navbar } from "react-bootstrap";
 import { BellFill, GearFill, PersonFill, Search } from "react-bootstrap-icons";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const MyNavBar = () => (
   <Navbar expand="lg" className="bg-primary">
     <Container>
       <Navbar.Brand>
-        <Image src="netflix_logo.png" />
+        <Link to="/">
+          <Image src="netflix_logo.png" />
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
